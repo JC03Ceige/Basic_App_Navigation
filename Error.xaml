@@ -1,0 +1,16 @@
+﻿<Page
+    x:Class="App_Navigation.Error"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App_Navigation"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="Red">
+
+    <Grid>
+        <Image Source="http://clipart-library.com/clipart/1205268.htm" Margin="508,400,650,275"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,392,0,0" Text="Your Computer Is Now Broken" FontWeight="Bold" FontFamily="Courier" FontSize="100" TextWrapping="Wrap" VerticalAlignment="Top" Height="180" Width="1481"/>
+
+    </Grid>
+</Page>

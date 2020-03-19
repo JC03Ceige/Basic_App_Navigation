@@ -1,0 +1,40 @@
+﻿<Page
+    x:Class="App_Navigation.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App_Navigation"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <AppBarButton Icon="List" Label="" Margin="10,10,0,0" Foreground="BlueViolet" Background="LightGray">
+            <MenuFlyout>
+                <MenuFlyoutItem Text="Not a real menu"/>
+                <MenuFlyoutItem Text="Same a above"/>
+                <MenuFlyoutItem Text="August, don't click here" Click="MenuFlyoutItem_Click"/>
+            </MenuFlyout>
+        </AppBarButton>
+        <AppBarButton x:Name="btnProfile" Height="70" Width="70" VerticalAlignment="Center" Margin="639,0,0,0" Foreground="ForestGreen" ToolTipService.ToolTip="User Profile" Click="btnProfile_Click">
+            <AppBarButton.Icon>
+                <SymbolIcon Symbol="People" x:DefaultBindMode="TwoWay"/>
+            </AppBarButton.Icon>
+        </AppBarButton>
+
+        <AppBarButton x:Name="btnMsg" Height="70" Width="70" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="ForestGreen" ToolTipService.ToolTip="Chat" Click="btnMsg_Click">
+            <AppBarButton.Icon>
+                <SymbolIcon Symbol="Message" x:DefaultBindMode="TwoWay"/>
+            </AppBarButton.Icon>
+        </AppBarButton>
+
+        <AppBarButton x:Name="btnSettings" Height="70" Width="70" VerticalAlignment="Center" Foreground="ForestGreen" ToolTipService.ToolTip="Settings" Click="btnSettings_Click" Margin="785,0,0,0">
+            <AppBarButton.Icon>
+                <SymbolIcon Symbol="Setting" x:DefaultBindMode="TwoWay"/>
+            </AppBarButton.Icon>
+        </AppBarButton>
+
+
+
+    </Grid>
+</Page>
