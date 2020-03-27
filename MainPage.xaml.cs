@@ -37,9 +37,9 @@ namespace App_Navigation
             this.Frame.Navigate(typeof(Message));
         }
 
-        private void btnSettings_Click(object sender, RoutedEventArgs e)
+        private void btnShare_Click(object sender, RoutedEventArgs e)
         {
-            this.Frame.Navigate(typeof(Settings));
+            sharePopup.IsOpen = true;
         }
 
         private void MenuFlyoutItem_Click(object sender, RoutedEventArgs e)

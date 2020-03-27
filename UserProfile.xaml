@@ -9,6 +9,43 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="640" />
+                    </VisualState.StateTriggers>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        
         <AppBarButton Icon="Back" ToolTipService.ToolTip="Back" Margin="10,10,0,0" Click="AppBarButton_Click" Foreground="Red" Background="LightGray"/>
+
+        <RelativePanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel x:Name="User" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200">
+                <TextBox x:Name="txtUserName" Header="Username" Margin="0,24,0,0" HorizontalAlignment="Left" Width="200"/>
+                <TextBox x:Name="txtPswd" Header="Password" Margin="0,24,0,0" HorizontalAlignment="Left" Width="200"/>
+                <TextBox x:Name="txtMobile" Header="Mobile No" Margin="0,24,0,0" HorizontalAlignment="Left" Width="200"/>
+                <TextBox x:Name="txtEmail" Header="Email Address" Margin="0,24,0,0" HorizontalAlignment="Left" Width="200"/>
+                <TextBox x:Name="txtAdrs" Header="Residential Address" Margin="0,24,0,0" HorizontalAlignment="Left" Width="200"/>
+                    <RelativePanel>
+                    <TextBox x:Name="txtCity" PlaceholderText="City" Margin="0,24,0,0"/>
+                    <ComboBox x:Name="txtProvince" PlaceholderText="Province" Margin="20,24,0,0" RelativePanel.RightOf="txtCity">
+                        <x:String>Eastern Cape</x:String>
+                        <x:String>Freestate</x:String>
+                        <x:String>Gauteng</x:String>
+                        <x:String>Kwazulu Natal</x:String>
+                        <x:String>Limpopo</x:String>
+                        <x:String>Mpumlanga</x:String>
+                        <x:String>Northern Cape</x:String>
+                        <x:String>Northwest</x:String>
+                        <x:String>Western Cape</x:String>
+                    </ComboBox>
+                </RelativePanel>
+
+
+            </StackPanel>
+        </RelativePanel>
     </Grid>
+    
 </Page>

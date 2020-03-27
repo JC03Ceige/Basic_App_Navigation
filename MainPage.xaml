@@ -10,30 +10,64 @@
 
     <Grid>
         <AppBarButton Icon="List" Label="" Margin="10,10,0,0" Foreground="BlueViolet" Background="LightGray">
-            <MenuFlyout>
+            <AppBarButton.Flyout>
+                <MenuFlyout>
                 <MenuFlyoutItem Text="Not a real menu"/>
-                <MenuFlyoutItem Text="Same a above"/>
+                <MenuFlyoutItem Text="Same as above"/>
                 <MenuFlyoutItem Text="August, don't click here" Click="MenuFlyoutItem_Click"/>
-            </MenuFlyout>
+                </MenuFlyout>
+            </AppBarButton.Flyout>
         </AppBarButton>
-        <AppBarButton x:Name="btnProfile" Height="70" Width="70" VerticalAlignment="Center" Margin="639,0,0,0" Foreground="ForestGreen" ToolTipService.ToolTip="User Profile" Click="btnProfile_Click">
+
+        <RelativePanel VerticalAlignment="Bottom" HorizontalAlignment="Stretch">
+        <AppBarButton x:Name="btnProfile" Height="70" Width="70" Foreground="ForestGreen" ToolTipService.ToolTip="User Profile" Click="btnProfile_Click" RelativePanel.AlignHorizontalCenterWithPanel="True">
             <AppBarButton.Icon>
                 <SymbolIcon Symbol="People" x:DefaultBindMode="TwoWay"/>
             </AppBarButton.Icon>
         </AppBarButton>
 
-        <AppBarButton x:Name="btnMsg" Height="70" Width="70" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="ForestGreen" ToolTipService.ToolTip="Chat" Click="btnMsg_Click">
+        <AppBarButton x:Name="btnMsg" Height="70" Width="70" Foreground="ForestGreen" ToolTipService.ToolTip="Chat" Click="btnMsg_Click" Margin="25,0,250,0" RelativePanel.AlignRightWith="btnProfile">
             <AppBarButton.Icon>
                 <SymbolIcon Symbol="Message" x:DefaultBindMode="TwoWay"/>
             </AppBarButton.Icon>
         </AppBarButton>
 
-        <AppBarButton x:Name="btnSettings" Height="70" Width="70" VerticalAlignment="Center" Foreground="ForestGreen" ToolTipService.ToolTip="Settings" Click="btnSettings_Click" Margin="785,0,0,0">
+        <AppBarButton x:Name="btnShare" Height="70" Width="70" Foreground="ForestGreen" ToolTipService.ToolTip="Share" Click="btnShare_Click" Margin="250,0,25,0" RelativePanel.AlignLeftWith="btnProfile">
             <AppBarButton.Icon>
-                <SymbolIcon Symbol="Setting" x:DefaultBindMode="TwoWay"/>
+                <SymbolIcon Symbol="Share" x:DefaultBindMode="TwoWay"/>
             </AppBarButton.Icon>
         </AppBarButton>
+        </RelativePanel>
 
+        <Popup x:Name="sharePopup" VerticalOffset="20" HorizontalOffset="200" IsOpen="False">
+            <Border BorderBrush="{StaticResource ApplicationForegroundThemeBrush}"
+                    Background="{StaticResource ApplicationPageBackgroundThemeBrush}"
+                    BorderThickness="2" Width="400" Height="200">
+                <StackPanel>
+                    <TextBlock Text="Share our app via any of the following..." Margin="20,20,20,30"/>
+                    
+                    <RelativePanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <CommandBar>
+                        <AppBarButton ToolTipService.ToolTip="Facebook">
+                            <Image Source="Assets/facebook.png" Width="60" Height="60"/>
+                        </AppBarButton>
+
+                        <AppBarButton ToolTipService.ToolTip="Instagram">
+                            <Image Source="Assets/instagram.png" Width="60" Height="60"/>
+                        </AppBarButton>
+
+                        <AppBarButton ToolTipService.ToolTip="Twitter">
+                            <Image Source="Assets/twitter.png" Width="60" Height="60"/>
+                        </AppBarButton>
+
+                        <AppBarButton ToolTipService.ToolTip="WhatsApp">
+                            <Image Source="Assets/whatsapp.png" Width="60" Height="60"/>
+                        </AppBarButton>
+                    </CommandBar>
+                </RelativePanel>
+                </StackPanel>
+            </Border>
+        </Popup>
 
 
     </Grid>
